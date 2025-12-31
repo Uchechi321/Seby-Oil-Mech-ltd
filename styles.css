@@ -428,3 +428,109 @@ footer p {
 .popup-content button:hover {
   background: #b89a5f;
 }
+
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+
+  .header-flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 12px;
+  }
+
+  .values-section,
+  .services-grid,
+  .footer-grid,
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ceo-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-hero .overlay,
+  .contact-hero .overlay {
+    padding-left: 40px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  /* HERO TEXT */
+  .hero h1,
+  .about-hero h1,
+  .contact-hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* GRIDS → SINGLE COLUMN */
+  .values-section,
+  .services-grid,
+  .footer-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ABOUT & CONTACT PADDING */
+  .about-section,
+  .contact-content {
+    padding: 50px 20px;
+  }
+
+  /* CEO IMAGE */
+  .ceo-section img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* MAP */
+  .map-box iframe {
+    min-height: 300px;
+  }
+}
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+
+  .logo span {
+    font-size: 14px;
+  }
+
+  .btn-primary {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
