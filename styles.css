@@ -430,11 +430,15 @@ footer p {
   background: #ffffff;
 }
 
-.ceo-section img {
+.ceo-icon {
+  font-size: 120px;      /* size of the icon */
   width: 200px;
   height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  object-fit: cover;
+  background: #e6e6e6;   /* light grey background */
 }
 
 .about-btn {
