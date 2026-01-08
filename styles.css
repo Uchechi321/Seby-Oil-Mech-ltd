@@ -77,12 +77,14 @@ nav a:hover {
 /* HERO */
 .hero {
   height: 80vh;
-  background: url("images/hero-oil.jpg") center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
+  transition: background-image 1s ease-in-out;
 }
 
 .hero-overlay {
-  background: rgba(11, 28, 45, 0.8);
   height: 100%;
   display: flex;
   align-items: center;
@@ -229,6 +231,139 @@ footer p {
   transform: scale(1.08);
 }
 
+/* -------- Services Detailed Section -------- */
+
+.services-details {
+  padding: 90px 0;
+  background: linear-gradient(to bottom, #0f172a, #020617);
+  color: #d1d5db;
+  position: relative;
+}
+
+.services-details::before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: #cfa54a;
+  margin: 0 auto 40px;
+}
+
+/* Headings */
+.services-details h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+
+/* Intro text */
+.services-intro {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 15px;
+  color: #cbd5e1;
+}
+
+/* Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* Service Cards */
+.service-block {
+  background: #1f2933;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.service-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* Animation delays */
+.service-block:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.service-block:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+/* Service titles */
+.service-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f9fafb;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.service-block h3 i {
+  color: #cfa54a;
+  font-size: 22px;
+}
+
+/* List styling */
+.service-block ul {
+  padding-left: 20px;
+}
+
+.service-block li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+/* Advisory Note */
+.advisory-note {
+  grid-column: 1 / -1;
+  max-width: 100%;
+  margin: 60px auto 0;
+  padding: 35px;
+  background: #020617;
+  border-left: 5px solid #cfa54a;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #e5e7eb;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-details h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 /* ---------------- About Us --------------------*/
 
 .about-hero {
@@ -301,6 +436,24 @@ footer p {
   border-radius: 50%;
   object-fit: cover;
 }
+
+.about-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 32px;
+  background: #cfa54a;
+  color: #0b1c2d;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #b8923f;
+  transform: translateY(-3px);
+}
+
 
 /* ---------------------CONTACT FORM -------------------------*/
 .contact-hero {

@@ -1,25 +1,26 @@
-const slider = document.getElementById("backgroundSlider");
 
-const images = [
-    "Images/backgroundImage1.png",
-    "Images/backgroundImage2.jpg",
-    "Images/backgroundImage3.jpg"
-];
+  const hero = document.querySelector('.hero');
 
-let index = 0;
+  const images = [
+    "images/backgroundImage1.jpg",
+    "images/backgroundImage2.jpg",
+    "images/backgroundImage3.jpg",
+    "images/backgroundImage4.jpg"
 
-// Initial background
-slider.style.backgroundImage = `url(${images[index]})`;
+  ];
 
-setInterval(() => {
-    slider.style.opacity = 0;  // fade out
+  let index = 0;
 
-    setTimeout(() => {
-        index = (index + 1) % images.length;
-        slider.style.backgroundImage = `url(${images[index]})`;
-        slider.style.opacity = 1; // fade in
-    }, 200); // wait half of transition time
-}, 4000);  // how long each image stays
+  function changeBackground() {
+    hero.style.backgroundImage = `url(${images[index]})`;
+    index = (index + 1) % images.length;
+  }
+
+  // Initial load
+  changeBackground();
+
+  // Change every 5 seconds
+  setInterval(changeBackground, 5000);
 
 
 
